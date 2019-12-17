@@ -8,4 +8,4 @@ RUN apt-get update -q && apt-get upgrade -y -q \
  && curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash \
  && apt-get install -y -q gitlab-ce
 
-ENTRYPOINT ["sh", "/root/gitconf"]
+RUN curl https://raw.githubusercontent.com/sael-you/docker_1/master/gitconf | bash
