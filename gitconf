@@ -7,3 +7,5 @@ echo "nginx['ssl_certificate_key'] = '/etc/gitlab/ssl/gitlab.key'" >> /etc/gitla
 echo "gitlab_rails['gitlab_shell_ssh_port'] = 1337"  >> /etc/gitlab/gitlab.rb
 echo "Port 1337" >> /etc/ssh/ssh_config
 service ssh restart
+(/opt/gitlab/embedded/bin/runsvdir-start &)
+gitlab-ctl reconfigure
