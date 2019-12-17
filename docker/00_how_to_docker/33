@@ -1,0 +1,1 @@
+eval docker image rm -f $(docker images -a -q)
