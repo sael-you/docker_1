@@ -9,3 +9,4 @@ echo "Port 1337" >> /etc/ssh/ssh_config
 service ssh restart
 /opt/gitlab/embedded/bin/runsvdir-start &
 gitlab-ctl reconfigure
+tail -f /dev/null
