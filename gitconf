@@ -1,4 +1,4 @@
-echo "external_url 'https://192.168.99.103'" > /etc/gitlab/gitlab.rb
+echo "external_url 'https://192.168.99.104'" > /etc/gitlab/gitlab.rb
 echo "nginx['redirect_http_to_https'] = true" >> /etc/gitlab/gitlab.rb
 echo "nginx['redirect_http_to_https_port'] = 80" >> /etc/gitlab/gitlab.rb
 echo "letsencrypt['enable'] = true" >> /etc/gitlab/gitlab.rb
