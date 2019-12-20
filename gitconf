@@ -7,5 +7,5 @@ echo "letsencrypt['auto_renew_hour'] = 0" >> /etc/gitlab/gitlab.rb
 echo "letsencrypt['auto_renew_minute'] = 30" >> /etc/gitlab/gitlab.rb
 echo "letsencrypt['auto_renew_day_of_month'] = "*/4"" >> /etc/gitlab/gitlab.rb
 echo "unicorn['worker_timeout'] = 300" >> /etc/gitlab/gitlab.rc
-echo "nginx['custom_gitlab_server_config'] = "location /.well-known/acme-challenge/ {\\n root /var/opt/gitlab/nginx/www/; \\n}\\n" >> /etc/gitlab/gitlab.rb
+echo "nginx['custom_gitlab_server_config'] = "location /.well-known/acme-challenge/ {\\n root /var/opt/gitlab/nginx/www/; \\n}\\n"" >> /etc/gitlab/gitlab.rb
 (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl renew-le-certs && gitlab-ctl reconfigure && tail -f /dev/null
