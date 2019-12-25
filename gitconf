@@ -2,10 +2,5 @@ echo "external_url 'https://192.168.99.104'" > /etc/gitlab/gitlab.rb
 echo "nginx['redirect_http_to_https'] = true" >> /etc/gitlab/gitlab.rb
 echo "nginx['redirect_http_to_https_port'] = 80" >> /etc/gitlab/gitlab.rb
 echo "letsencrypt['enable'] = true" >> /etc/gitlab/gitlab.rb
-echo "letsencrypt['auto_renew'] = true" >> /etc/gitlab/gitlab.rb
-echo "letsencrypt['auto_renew_hour'] = 0" >> /etc/gitlab/gitlab.rb
-echo "letsencrypt['auto_renew_minute'] = 30" >> /etc/gitlab/gitlab.rb
-echo "letsencrypt['auto_renew_day_of_month'] = \"*/4\"" >> /etc/gitlab/gitlab.rb
-echo "unicorn['worker_timeout'] = 300" >> /etc/gitlab/gitlab.rc
 (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl renew-le-certs && gitlab-ctl reconfigure
 tail -f /dev/null
