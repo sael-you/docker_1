@@ -2,5 +2,8 @@ echo "external_url 'https://192.168.99.103'" > /etc/gitlab/gitlab.rb
 echo "nginx['redirect_http_to_https'] = true" >> /etc/gitlab/gitlab.rb
 echo "nginx['redirect_http_to_https_port'] = 80" >> /etc/gitlab/gitlab.rb
 echo "letsencrypt['enable'] = true" >> /etc/gitlab/gitlab.rb
-(/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl renew-le-certs && gitlab-ctl reconfigure
+echo "gitlab_rails['gitlab_shell_ssh_port'] = 1337"  >> /etc/gitlab/gitlab.rb
+echo "Port 1337" >> /etc/ssh/ssh_config
+service ssh restart
+(/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl reconfigure
 tail -f /dev/null
