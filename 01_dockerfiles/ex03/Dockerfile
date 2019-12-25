@@ -9,7 +9,7 @@ RUN apt-get update -q && apt-get upgrade -y -q \
  && apt-get install -y -q gitlab-ce \
  && service ssh restart
 
-EXPOSE 80 443 22
+EXPOSE 80 443 1337
 
 WORKDIR /root
 
