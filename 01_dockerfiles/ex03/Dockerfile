@@ -7,7 +7,6 @@ RUN apt-get update -q && apt-get upgrade -y -q \
  && apt-get install curl openssh-server ca-certificates postfix tzdata -y -q \
  && curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash \
  && apt-get install -y -q gitlab-ce \
- && service ssh restart
 
 EXPOSE 80 443 1337
 
